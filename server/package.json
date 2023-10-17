@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "stackflow",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "raj",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/dialogflow": "^6.1.0",
+    "bcryptjs": "^2.4.3",
+    "cons": "^0.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "mailgen": "^2.0.27",
+    "mongodb": "^5.7.0",
+    "mongoose": "^7.4.0",
+    "nodemailer": "^6.9.4",
+    "nodemon": "^3.0.1",
+    "otp-generator": "^4.0.1",
+    "razorpay": "^2.9.2",
+    "twilio": "^4.17.0",
+    "uuid": "^9.0.1"
+  }
+}

@@ -1,0 +1,122 @@
+.view-ans{
+    margin-top: 0%;
+    margin-left: 20%;
+    width: 100%;
+    height: 50%;
+   }
+
+.view-container h1{
+    margin-top: 0%;
+    padding: 0px 0px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px rgb(248, 245, 245);
+    min-width: 300%;
+    margin-left: -7%;
+   }
+
+
+
+
+.view-container2{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 17px 10px;
+    border-bottom: solid 1px rgb(248, 245, 245);
+    width: 390%;
+    margin-left: 0%;
+}
+
+
+.logo2 {
+    font-size: 40px;
+    cursor: pointer;
+    color: rgb(206, 203, 203);
+}
+.logo2:active {
+        color: #ef8236;
+    }
+
+
+  
+ .view-body{
+    padding: 2px 0px;
+    }
+
+    .view-body p{
+        padding: 2px 0px;
+        margin-left: 10px;
+    }  
+
+ .view-user{
+    display: flex;
+    padding: 10px 20px;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin-left: 170%;
+    margin-top: -38%;
+    flex-direction: column;
+    width: 100%;
+    
+}
+
+.view-user-bio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0px;
+    margin-top: 1%;
+    margin: 0%;
+}
+
+.view-user-bio h1{
+    padding: 0px 2px;
+    margin: 0%;
+    font-size: 13px;
+    
+}
+
+.your-ans textarea{
+  width: 280%;
+  height: 200px;
+  padding: 0px 0px;
+  border: 1px solid rgb(150, 149, 149);
+  outline: none;
+  border-radius: 4px;
+  margin-top: 10%;
+  display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+
+
+}
+
+.your-ans textarea:focus{
+    border-color: aqua;
+  }
+
+.end{
+    width: 500%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.btn-sp{
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+
+.qn-link{
+    text-decoration: none;
+    color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: blue;
+    padding: 10px 20px;
+    margin-left: 1px;
+    font-size: 13px;
+    cursor: pointer;
+   }
+
+
