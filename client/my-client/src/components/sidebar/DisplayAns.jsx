@@ -21,7 +21,7 @@ export default function DisplayAns() {
     const dispatch = useDispatch();
     const User = useSelector((state) => state.currentuserReducer);
     const location = useLocation();
-    const url = 'https://server-client-3wda.onrender.com/';
+    const url = 'https://server-side-ur49.onrender.com';
     useEffect(()=>{
     console.log(Answer)
     },[Answer])

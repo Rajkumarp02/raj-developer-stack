@@ -20,14 +20,19 @@ export const postAnswer = async (req, res) => {
  });
     
    await updateUserAnswer(userId);
+   await deleteAnswer(userId);
    const user = await User.findById(userId);
+   const duser= await User.findById(userId);
    if(user.qnAnswered >= 4){ //if user answered actively 4(0,1,2,3) , points added =10 also badges added =1,
     //await updateUser(userId,{$addToSet:{badges:"Honor Badge"},$inc:{points:10}});
     const updateUser = await User.findByIdAndUpdate(userId,{$inc:{badges:1,ansPoints:10}});//if answered more than 5 0r 5(0,1,2,3,4,5) ,it will be increase(like points 20,badges 2)
     return res.status(200).json({message:"Honor Badge earned",updateUser});
     }
-     
- 
+    if(duser.qnAnswered -= 1){
+      const updateUser = await User.findByIdAndUpdate(userId,{$inc:{badges:-1,ansPoints:-10}});
+      return res.status(200).json({message:"decrease answer",updateUser});
+      } 
+  
      
    return res.status(200).json(updatedQuestion);
    }catch(error) {
@@ -60,9 +65,10 @@ const updateUserAnswer = async (userId) => {
 
 
 
+
 export const deleteAnswer = async (req,res) => {
   const {id:_id} = req.params;
-  const {answerId,noOfAns,userId} = req.body;
+  const {answerId,noOfAns} = req.body;
   if (!mongoose.Types.ObjectId.isValid(_id)) {
     return res.status(404).send("question unavailable...");
   }
@@ -72,19 +78,13 @@ export const deleteAnswer = async (req,res) => {
   }
   updateNoOfQuestions(_id, noOfAns);
   
-  
   try {
       await Question.updateOne(
         {_id},
         {$pull:{answer: {_id:answerId}}}
       )
-      await updateUserAnswer(userId);
-      const user = await User.findById(userId);
-   if(user.qnAnswered -=1){  
-    const updateUser = await User.findByIdAndUpdate(userId,{$inc:{badges:-1,ansPoints:-10}});
-    return res.status(200).json({message:"Honor Badge earned",updateUser});
-    }
-     res.status(200).send("successfully...");
+    
+     return res.status(200).send("successfully...");
 
     
   }catch(error){
